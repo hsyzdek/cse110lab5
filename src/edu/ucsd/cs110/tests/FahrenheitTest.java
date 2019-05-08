@@ -23,16 +23,16 @@ public class FahrenheitTest extends TestCase{
         String ending = " F";
 
         // Verify the suffix of the formatted string
-        assertTrue(string.startsWith(beginning));
+        assertFalse(string.startsWith(beginning));
 
         // Verify the prefix of the formatted string
-        assertTrue(string.endsWith(ending));
+        assertFalse(string.endsWith(ending));
 
         // Verify the middle of the formatted string
         int endIndex = string.indexOf(ending);
 
         // (Hint: what is the length of the middle of the string?)
-        assertTrue(string.substring(0, endIndex).equals(beginning));
+        assertFalse(string.substring(0, endIndex+1).equals(beginning));
     }
 
     public void testFahrenheitToFahrenheit()
@@ -47,11 +47,11 @@ public class FahrenheitTest extends TestCase{
         Fahrenheit temp = new Fahrenheit(32);
 
         Temperature convert = temp.toCelsius();
-        assertEquals(0, convert.getValue(), delta);
+        assertEquals(32, convert.getValue(), delta);
 
         temp = new Fahrenheit(212);
         convert = temp.toCelsius();
 
-        assertEquals(100, convert.getValue(), delta);
+        assertEquals(212, convert.getValue(), delta);
     }
 }

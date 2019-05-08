@@ -8,7 +8,7 @@ public class Fahrenheit extends Temperature
 
     @Override
     public Temperature toCelsius() {
-        return null;
+        return new Celsius(value);
     }
 
     @Override
